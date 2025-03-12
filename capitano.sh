@@ -13,7 +13,7 @@ sudo apt update
 # export DEBIAN_FRONTEND=noninteractive
 # sudo apt-get -o Dpkg::Options::=--force-confnew install -y --allow-downgrades --allow-remove-essential --allow-change-held-packages openssh-server
 # hammer just works
-sudo rm -f /etc/ssh/sshd_config
+cp sshd_config /etc/ssh/sshd_config
 sudo apt-get install -y openssh-server
 
 sudo /etc/init.d/ssh restart
