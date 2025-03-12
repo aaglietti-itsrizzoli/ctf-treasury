@@ -13,3 +13,5 @@ sudo /etc/init.d/ssh restart
 sudo cp torrc /etc/tor/torrc
 
 sudo /etc/init.d/tor restart
+
+.devcontainer/treasures.sh
