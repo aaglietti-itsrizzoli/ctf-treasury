@@ -1,0 +1,10 @@
+{
+	"postCreateCommand": ".devcontainer/post-create-command.sh",
+	"customizations": {
+		"codespaces": {
+			"openFiles": [
+				"MAZE.txt"
+			]
+		}
+	}
+}
