@@ -11,9 +11,10 @@ sudo apt update
 
 # export UCF_FORCE_CONFFNEW=1
 # export DEBIAN_FRONTEND=noninteractive
+# --force-confask --force-confdef --force-confold ...
 # sudo apt-get -o Dpkg::Options::=--force-confnew install -y --allow-downgrades --allow-remove-essential --allow-change-held-packages openssh-server
 # hammer just works
-cp sshd_config /etc/ssh/sshd_config
+sudo apt-get purge -y openssh-server
 sudo apt-get install -y openssh-server
 
 sudo /etc/init.d/ssh restart
