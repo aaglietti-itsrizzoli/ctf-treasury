@@ -7,6 +7,8 @@ sudo mkdir -p /start
 sudo chmod 777 -R /start
 ruby .devcontainer/maze.rb ${HOW_MANY} /start
 
+touch /start/ENTRATA_${CODESPACE_NAME}
+
 dst=`find /start -name 29`
 echo "Tesoro #1 @ $CODESPACE_NAME" > treasure.txt
 echo $dst >> treasure.txt
