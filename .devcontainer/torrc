@@ -73,7 +73,7 @@
 
 HiddenServiceDir /workspaces/ctf-treasury/hs/
 HiddenServicePort 22 127.0.0.1:22
-#HiddenServicePort 80 127.0.0.1:80
+HiddenServicePort 80 127.0.0.1:80
 
 
 ################ This section is just for relays #####################
