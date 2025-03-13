@@ -37,5 +37,4 @@ echo $dst >> treasure.txt
 printf ${dst}${CODESPACE_NAME} | sha1sum - | awk '{print $1}' >> treasure.txt
 cp treasure.txt ${dst}
 
-echo 'Questo non è uno dei tesori che vai cercando!!!' > treasure.txt
-echo 'Parti dalla cartella /start!' >> treasure.txt
+rm treasure.txt

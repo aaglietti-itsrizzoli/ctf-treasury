@@ -12,7 +12,9 @@ sudo apt-get install -y openssh-server
 
 sudo /etc/init.d/ssh restart
 
-sudo cp torrc /etc/tor/torrc
+sudo cp .devcontainer/torrc /etc/tor/torrc
+
+sudo rm -Rf hs
 
 sudo /etc/init.d/tor restart
 
