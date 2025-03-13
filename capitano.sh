@@ -8,7 +8,6 @@ code ~/.ssh/authorized_keys
 
 sudo apt update
 
-
 # export UCF_FORCE_CONFFNEW=1
 # export DEBIAN_FRONTEND=noninteractive
 # --force-confask --force-confdef --force-confold ...
@@ -24,3 +23,9 @@ sudo cp torrc /etc/tor/torrc
 sudo /etc/init.d/tor restart
 
 .devcontainer/treasures.sh
+
+echo "##########################"
+echo ""
+TOR_HOSTNAME=`sudo cat ./hs/hostname`
+
+echo "TEAM ${CODESPACE_NAME}: ${TOR_HOSTNAME}"
