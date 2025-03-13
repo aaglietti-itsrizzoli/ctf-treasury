@@ -1,12 +1,16 @@
 WELCOME TO THE CAPTURE THE FLAG MAZE EDITION
 
-If your are the boss of your team start your team maze
+1) If your are the boss of your team start your team maze
 
 ./boss.sh
 
-Attack other team maze
+2) Access other team maze
 
 torify ssh codespace@[TEAM .onion address]
+
+3) Deliver captured treasures!!
+
+https://docs.google.com/forms/d/e/1FAIpQLScHcP-P-nuSBGyHMtIZi1gavWY6bq81HbWPwHiEXGoB38JjKw/viewform?usp=dialog
 
 .........................................................................
 .........................................................................
