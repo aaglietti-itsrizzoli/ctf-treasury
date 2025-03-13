@@ -1,11 +1,5 @@
 #!/bin/bash
 
-mkdir -p ~/.ssh
-touch ~/.ssh/authorized_keys
-chmod 600 ~/.ssh/authorized_keys
-
-code ~/.ssh/authorized_keys
-
 sudo apt update
 
 # export UCF_FORCE_CONFFNEW=1
@@ -26,6 +20,12 @@ sudo /etc/init.d/tor restart
 
 echo "##########################"
 echo ""
+until sudo [ -f ./hs/hostname ]
+do
+     sleep 5
+done
 TOR_HOSTNAME=`sudo cat ./hs/hostname`
 
 echo "TEAM ${CODESPACE_NAME}: ${TOR_HOSTNAME}"
+echo ""
+echo ""
