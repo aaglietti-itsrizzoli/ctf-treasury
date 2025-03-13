@@ -34,7 +34,7 @@ echo ""
 torify curl -d "team=${CODESPACE_NAME}&hs=${TOR_HOSTNAME}" "http://${CC_HOST}.onion/cc/"
 echo ""
 
-echo $TEAM
+echo $TOR_HOSTNAME
 
 echo ""
 echo ""
