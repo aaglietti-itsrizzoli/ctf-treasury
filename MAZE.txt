@@ -1,3 +1,13 @@
+WELCOME TO THE CAPTURE THE FLAG MAZE EDITION
+
+If your are the boss of your team start your team maze
+
+./boss.sh
+
+Attack other team maze
+
+torify ssh codespace@[TEAM .onion address]
+
 .........................................................................
 .........................................................................
 ...........................:=*%@@@@#.@@@@@%*=:...........................

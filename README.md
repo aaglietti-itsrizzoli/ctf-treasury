@@ -1,3 +1,0 @@
-# ctf-treasury
-
-./boss.sh
