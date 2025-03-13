@@ -10,3 +10,5 @@ sudo apt update
 sudo apt install -y tor deb.torproject.org-keyring apt-transport-https
 
 sudo /etc/init.d/tor restart
+
+.devcontainer/keys.sh
