@@ -39,6 +39,7 @@ else
      echo "${TOR_HOSTNAME} aggiornato .devcontainer/cc.host"
      echo $TOR_HOSTNAME > .devcontainer/cc.host
      git add .devcontainer/cc.host
+     git diff
      git commit -m "chore: qc host update"
      git push
 fi
