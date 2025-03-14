@@ -7,6 +7,6 @@ curl --silent http://127.0.0.1/cc/ | jq -r '.hidden_services[] | .[2]' |
     echo ".devcontainer/check-curl.sh $hidden_service" >> .devcontainer/check-curls.sh
   done
 
-torify bash .devcontainer/check-curls.sh
+bash .devcontainer/check-curls.sh
 
 echo "DONE"
