@@ -4,9 +4,9 @@ WELCOME TO THE CAPTURE THE FLAG MAZE EDITION
 
 ./boss.sh
 
-2) Access other team maze
+2) Hack other team maze
 
-torify ssh codespace@[TEAM .onion address]
+torify ssh codespace@abc...123.onion
 
 3) Deliver captured treasures!!
 
