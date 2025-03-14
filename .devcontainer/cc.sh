@@ -9,6 +9,9 @@ sudo cp .devcontainer/.htaccess /var/www/html/cc/.htaccess
 sudo cp .devcontainer/index.py /var/www/html/cc/index.py
 sudo chmod +x /var/www/html/cc/index.py
 
+sudo cp .devcontainer/cc.html /var/www/html/cc.html
+sudo cp .devcontainer/jquery-3.7.1.min.js /var/www/html/jquery-3.7.1.min.js
+
 sudo cp .devcontainer/000-default.conf /etc/apache2/sites-available/000-default.conf
 
 sudo a2enmod rewrite python

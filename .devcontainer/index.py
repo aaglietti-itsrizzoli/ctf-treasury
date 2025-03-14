@@ -2,6 +2,7 @@ from mod_python import apache
 import urlparse
 import sqlite3
 import json
+from datetime import datetime
 
 def hidden_services():
 
@@ -30,7 +31,10 @@ def handler(req):
 
     if "team" not in args:
         req.content_type = "application/json; charset=UTF-8"
-        req.write(json.dumps({"hidden_services": hidden_services()}))
+        req.write(json.dumps({
+            "_" : datetime.today().strftime('%Y-%m-%d %H:%M:%S'),
+            "hidden_services": hidden_services()
+        }))
         return apache.OK
 
     team = args["team"][0]

@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <script>
+        $(function () {
+            setInterval(function(){
+                $.get("cc/", function (data) {
+                    console.log(data);
+                    var hidden_services = data.hidden_services;
+                    var updated_at = data._;
+                    $("#updated_at").text(updated_at);
+                    var hidden_services_html = hidden_services.map(hs => "<p class='hs'>" + hs[1] + ": " + hs[2] + "</p>").join("\n");
+                    $("#container").html(hidden_services_html);
+                });
+            }, 1000);
+        });
+    </script>
+    <h1 id="updated_at"></h1>
+    <div id="container">
+    </div>
+</body>
+
+</html>
