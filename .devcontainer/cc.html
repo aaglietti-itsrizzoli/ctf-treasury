@@ -6,6 +6,10 @@
         .red-bg {
             background-color: red;
         }
+
+        .orange-bg {
+            background-color: orange;
+        }
     </style>
 </head>
 
@@ -15,6 +19,8 @@
             var _class = 'hs';
             if (Number(hs[3]) === 0) {
                 _class += ' red-bg';
+            } else if (Number(hs[3]) === 1) {
+                _class += ' orange-bg';
             }
             return _class;
         }
@@ -25,7 +31,8 @@
                 var hidden_services = data.hidden_services;
                 var updated_at = data._;
                 $("#updated_at").text(updated_at);
-                var hidden_services_html = hidden_services.map(hs => "<p class='" + css_class(hs) + "'>" + hs[1] + "(" + hs[3] + "): " + hs[2] + "</p>").join("\n");
+                var hidden_services_sorted = hidden_services.sort((a,b) => {return (a[3] < b[3] ? 1 : -1)})
+                var hidden_services_html = hidden_services_sorted.map(hs => "<p class='" + css_class(hs) + "'><b>" + hs[1] + " (" + hs[3] + ")</b>: " + hs[2] + "</p>").join("\n");
                 $("#container").html(hidden_services_html);
             });
         }
