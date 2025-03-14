@@ -30,11 +30,18 @@ done
 TOR_HOSTNAME=`sudo cat ./hs/hostname`
 TEAM="TEAM ${CODESPACE_NAME}: ${TOR_HOSTNAME}"
 
-echo ""
-torify curl -d "team=${CODESPACE_NAME}&hs=${TOR_HOSTNAME}" "http://${CC_HOST}.onion/cc/"
-echo ""
-
-echo $TOR_HOSTNAME
+if [ $# -eq 0 ]
+then
+     echo ""
+     torify curl -d "team=${CODESPACE_NAME}&hs=${TOR_HOSTNAME}" "http://${CC_HOST}.onion/cc/"
+     echo ""
+else
+     echo "${TOR_HOSTNAME} aggiornato .devcontainer/cc.host"
+     echo $TOR_HOSTNAME > .devcontainer/cc.host
+     git add .devcontainer/cc.host
+     git commit -m "chore: qc host update"
+     git push
+fi
 
 echo ""
 echo ""
