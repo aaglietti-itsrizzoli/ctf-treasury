@@ -8,6 +8,11 @@
 			"openFiles": [
 				"MAZE.txt"
 			]
+		},
+		"vscode": {
+			"extensions": [
+				"ms-python.python"
+			]
 		}
 	}
 }
