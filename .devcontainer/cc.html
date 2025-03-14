@@ -12,7 +12,7 @@
                 var hidden_services = data.hidden_services;
                 var updated_at = data._;
                 $("#updated_at").text(updated_at);
-                var hidden_services_html = hidden_services.map(hs => "<p class='hs'>" + hs[1] + ": " + hs[2] + "</p>").join("\n");
+                var hidden_services_html = hidden_services.map(hs => "<p class='hs'>" + hs[1] + "(" + hs[3] + "): " + hs[2] + "</p>").join("\n");
                 $("#container").html(hidden_services_html);
             });
         }

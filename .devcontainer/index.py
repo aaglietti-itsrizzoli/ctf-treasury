@@ -60,7 +60,8 @@ def handler(req):
     CREATE TABLE IF NOT EXISTS HiddenServices (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         team TEXT NOT NULL,
-        host TEXT NOT NULL
+        host TEXT NOT NULL,
+        count INTEGER DEFAULT 0
     );
     '''
 
