@@ -2,6 +2,8 @@
 
 sudo apt-get install -y apache2 libapache2-mod-python
 
+sudo rm -Rf .devcontainer/cc.db
+
 sudo rm -Rf /var/www/html/cc
 sudo mkdir -p /var/www/html/cc
 sudo cp .devcontainer/.htaccess /var/www/html/cc/.htaccess
