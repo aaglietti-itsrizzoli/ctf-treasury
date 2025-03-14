@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CC_HOST="oldmtl2sglxikhgtenomsgkrvkm5hgnvhhrqpnkryq7c4tunjpcw6tqd"
+CC_HOST=`cat .devcontainer/cc.host`
 
 sudo apt update
 
