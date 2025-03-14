@@ -25,7 +25,31 @@ def hidden_services():
 
     return hidden_services
 
+def ddl():
+    # Connect to the SQLite database (or create it if it doesn't exist)
+    connection = sqlite3.connect('/workspaces/ctf-treasury/.devcontainer/cc.db')
+
+    cursor = connection.cursor()
+
+    # Write the SQL command to create the Students table
+    create_table_query = '''
+    CREATE TABLE IF NOT EXISTS HiddenServices (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        team TEXT NOT NULL,
+        host TEXT NOT NULL,
+        count INTEGER DEFAULT 0
+    );
+    '''
+
+    # Execute the SQL command
+    cursor.execute(create_table_query)
+
+    # Commit the changes
+    connection.commit()
+
 def handler(req):
+
+    ddl()
 
     args = urlparse.parse_qs(req.read())
 
@@ -76,22 +100,6 @@ def handler(req):
     connection = sqlite3.connect('/workspaces/ctf-treasury/.devcontainer/cc.db')
 
     cursor = connection.cursor()
-
-        # Write the SQL command to create the Students table
-    create_table_query = '''
-    CREATE TABLE IF NOT EXISTS HiddenServices (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        team TEXT NOT NULL,
-        host TEXT NOT NULL,
-        count INTEGER DEFAULT 0
-    );
-    '''
-
-    # Execute the SQL command
-    cursor.execute(create_table_query)
-
-    # Commit the changes
-    connection.commit()
 
     insert_query = '''
     INSERT INTO HiddenServices (team, host) 
