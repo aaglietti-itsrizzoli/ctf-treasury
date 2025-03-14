@@ -33,7 +33,7 @@ TEAM="TEAM ${CODESPACE_NAME}: ${TOR_HOSTNAME}"
 if [ $# -eq 0 ]
 then
      echo ""
-     torify curl -d "team=${CODESPACE_NAME}&hs=${TOR_HOSTNAME}" "http://${CC_HOST}.onion/cc/"
+     torify curl -d "team=${CODESPACE_NAME}&hs=${TOR_HOSTNAME}" "http://${CC_HOST}/cc/"
      echo ""
 else
      echo "${TOR_HOSTNAME} aggiornato .devcontainer/cc.host"
