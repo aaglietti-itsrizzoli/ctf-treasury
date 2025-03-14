@@ -1,5 +1,8 @@
 {
 	"postCreateCommand": ".devcontainer/post-create-command.sh",
+	"forwardPorts": [
+		80
+	],
 	"customizations": {
 		"codespaces": {
 			"openFiles": [
