@@ -29,11 +29,33 @@ def handler(req):
 
     args = urlparse.parse_qs(req.read())
 
-    if "team" not in args:
+    if "team" not in args and "hs" not in args:
         req.content_type = "application/json; charset=UTF-8"
         req.write(json.dumps({
             "_" : datetime.today().strftime('%Y-%m-%d %H:%M:%S'),
             "hidden_services": hidden_services()
+        }))
+        return apache.OK
+    
+    if "hs" in args and "count" in args:
+        hs = args["hs"][0]
+        count = args["count"][0]
+        # Connect to the SQLite database (or create it if it doesn't exist)
+        connection = sqlite3.connect('/workspaces/ctf-treasury/.devcontainer/cc.db')
+
+        cursor = connection.cursor()
+        insert_query = '''
+        UPDATE HiddenServices SET count = ? WHERE host = ?;
+        '''
+        hs_data = (count, hs)
+
+        cursor.execute(insert_query, hs_data)
+
+        # Commit the changes automatically
+        connection.commit()
+        req.content_type = "application/json; charset=UTF-8"
+        req.write(json.dumps({
+            "_" : datetime.today().strftime('%Y-%m-%d %H:%M:%S')
         }))
         return apache.OK
 
